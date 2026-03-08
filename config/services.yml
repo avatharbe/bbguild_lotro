@@ -1,6 +1,11 @@
 services:
     avathar.bbguild_lotro.installer:
         class: avathar\bbguild_lotro\game\lotro_installer
+        arguments:
+            - '@dbal.conn'
+            - '@cache'
+            - '@config'
+            - '@user'
 
     avathar.bbguild_lotro.provider:
         class: avathar\bbguild_lotro\game\lotro_provider
