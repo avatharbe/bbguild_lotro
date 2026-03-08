@@ -45,9 +45,9 @@ class lotro_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 5,  'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#0077DD', 'imagename' => 'lotro_hunter');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 6,  'class_armor_type' => 'CLOTH', 'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#CC00AA', 'imagename' => 'lotro_lore-master');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 7,  'class_armor_type' => 'CLOTH', 'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#66FFCC', 'imagename' => 'lotro_minstrel');
-		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 8,  'class_armor_type' => 'CLOTH', 'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#66FFCC', 'imagename' => 'lotro_rune-keeper');
-		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 9,  'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#FF0044', 'imagename' => 'lotro_warden');
-		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 10, 'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#4D1900', 'imagename' => 'lotro_beorning');
+		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 8,  'class_armor_type' => 'CLOTH', 'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#CC00AA', 'imagename' => 'lotro_rune-keeper');
+		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 9,  'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#CC9933', 'imagename' => 'lotro_warden');
+		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 10, 'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#CC9933', 'imagename' => 'lotro_beorning');
 		// Monster Play
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 20, 'class_armor_type' => 'MAIL',  'class_min_level' => 75, 'class_max_level' => 75, 'colorcode' => '#FF0044', 'imagename' => 'lotro_reaver');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 21, 'class_armor_type' => 'CLOTH', 'class_min_level' => 75, 'class_max_level' => 75, 'colorcode' => '#66FFCC', 'imagename' => 'lotro_defiler');
