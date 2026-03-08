@@ -20,13 +20,12 @@ class lotro_installer extends abstract_game_install
 	 */
 	protected function install_factions()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 1, 'faction_name' => 'Free Peoples');
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 2, 'faction_name' => 'Servants of the Eye');
-		$db->sql_multi_insert($this->table('bb_factions_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_factions_table'), $sql_ary);
 	}
 
 	/**
@@ -34,9 +33,8 @@ class lotro_installer extends abstract_game_install
 	 */
 	protected function install_classes()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		// Free Peoples
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 0,  'class_armor_type' => 'MAIL',  'class_min_level' => 1,  'class_max_level' => 75, 'colorcode' => '#999999', 'imagename' => 'lotro_unknown');
@@ -57,10 +55,10 @@ class lotro_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 23, 'class_armor_type' => 'MAIL',  'class_min_level' => 75, 'class_max_level' => 75, 'colorcode' => '#0077DD', 'imagename' => 'lotro_blackarrow');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 24, 'class_armor_type' => 'PLATE', 'class_min_level' => 75, 'class_max_level' => 75, 'colorcode' => '#CC9933', 'imagename' => 'lotro_warleader');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 25, 'class_armor_type' => 'MAIL',  'class_min_level' => 75, 'class_max_level' => 75, 'colorcode' => '#FF0044', 'imagename' => 'lotro_stalker');
-		$db->sql_multi_insert($this->table('bb_classes_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_classes_table'), $sql_ary);
 		unset($sql_ary);
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "' AND attribute = 'class'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "' AND attribute = 'class'");
 		$sql_ary = array();
 
 		// en
@@ -139,7 +137,7 @@ class lotro_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 24, 'language' => 'it', 'attribute' => 'class', 'name' => 'Warleader',  'name_short' => 'Warleader');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 25, 'language' => 'it', 'attribute' => 'class', 'name' => 'Stalker',    'name_short' => 'Stalker');
 
-		$db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
 
 	/**
@@ -147,9 +145,8 @@ class lotro_installer extends abstract_game_install
 	 */
 	protected function install_races()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 0,  'race_faction_id' => 1, 'image_female' => 'lotro_unknown',          'image_male' => 'lotro_unknown');
 		// Man
@@ -184,10 +181,10 @@ class lotro_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 7,  'race_faction_id' => 1, 'image_female' => 'lotro_stoutaxe',        'image_male' => 'lotro_stoutaxe');
 		// Monster
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 50, 'race_faction_id' => 2, 'image_female' => 'lotro_monster',          'image_male' => 'lotro_monster');
-		$db->sql_multi_insert($this->table('bb_races_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_races_table'), $sql_ary);
 		unset($sql_ary);
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "' AND attribute = 'race'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "' AND attribute = 'race'");
 		$sql_ary = array();
 
 		// en
@@ -289,6 +286,6 @@ class lotro_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 7,  'language' => 'it', 'attribute' => 'race', 'name' => 'Stout-axe Dwarf',       'name_short' => 'Stout-axe');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 50, 'language' => 'it', 'attribute' => 'race', 'name' => 'Servant of the Eye',    'name_short' => 'Servant of the Eye');
 
-		$db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
 }
